@@ -30,22 +30,26 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun initializeListener() {
         bt_signup.setOnClickListener {
-            pb_loading.showVisibility()
-            bt_signup.disable()
-            firebaseAuth
-                    .createUserWithEmailAndPassword(et_email.text.toString(), et_password.text.toString())
-                    .addOnCompleteListener {
-                        pb_loading.hideVisibility()
-                        if (it.isSuccessful) {
-                            saveUid()
-                            startActivity(Intent(this@SignUpActivity, MainActivity::class.java))
-                            finish()
-                        } else {
-                            it.exception?.message?.let { toast(it) }
-                            it.exception?.printStackTrace()
-                            bt_signup.enable()
+            if(et_email.text.isNotEmpty() && et_password.text.isNotEmpty()) {
+                pb_loading.showVisibility()
+                bt_signup.disable()
+                firebaseAuth
+                        .createUserWithEmailAndPassword(et_email.text.toString(), et_password.text.toString())
+                        .addOnCompleteListener {
+                            pb_loading.hideVisibility()
+                            if (it.isSuccessful) {
+                                saveUid()
+                                startActivity(Intent(this@SignUpActivity, MainActivity::class.java))
+                                finish()
+                            } else {
+                                it.exception?.message?.let { toast(it) }
+                                it.exception?.printStackTrace()
+                                bt_signup.enable()
+                            }
                         }
-                    }
+            } else {
+                toast(getString(R.string.empty_username))
+            }
         }
         tv_login.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
@@ -54,8 +58,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun saveUid() {
-        val firebaseUser: FirebaseUser? = firebaseAuth.currentUser
-        firebaseUser?.let {
+        firebaseAuth.currentUser?.let {
             SharedPreferenceHelper.setString(SharedPreferenceHelper.FIREBASE_UID, it.uid)
             SharedPreferenceHelper.setString(SharedPreferenceHelper.FIREBASE_USER_NAME, it.email)
         }
