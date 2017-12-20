@@ -136,7 +136,11 @@ class LobbyActivity : BaseActivity() {
                         }
                         okButton {
                             val roomName = etRoomName.text.toString()
-                            roomReference.child(roomName).setValue(ChatRoom(roomName, etRoomDesc.text.toString(), 1))
+                            if(roomName.isNotEmpty()) {
+                                roomReference.child(roomName).setValue(ChatRoom(roomName, etRoomDesc.text.toString(), 1))
+                            } else {
+                                toast(context.getString(R.string.empty_room))
+                            }
                         }
                     }
                 }

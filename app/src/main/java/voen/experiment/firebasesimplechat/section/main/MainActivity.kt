@@ -103,10 +103,13 @@ class MainActivity : BaseActivity() {
 
     private fun initializeListener() {
         bt_send.setOnClickListener {
-            chatReference.push().key.let {
-                chatReference.child(it).setValue(Chat(it, et_message.text.toString(), SharedPreferenceHelper.getString(SharedPreferenceHelper.FIREBASE_USER_NAME)))
+            val message = et_message.text.toString()
+            if(message.isNotEmpty()) {
+                chatReference.push().key.let {
+                    chatReference.child(it).setValue(Chat(it, message, SharedPreferenceHelper.getString(SharedPreferenceHelper.FIREBASE_USER_NAME)))
+                }
+                et_message.text.clear()
             }
-            et_message.text.clear()
         }
         chatReference.addValueEventListener(eventListener)
         subscribeReference.addValueEventListener(subscribeListener)

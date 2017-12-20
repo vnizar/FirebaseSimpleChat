@@ -30,25 +30,29 @@ class LoginActivity : AppCompatActivity() {
 
     private fun initializeListener() {
         bt_login.setOnClickListener {
-            pb_loading.showVisibility()
-            bt_login.disable()
-            firebaseAuth
-                    .signInWithEmailAndPassword(et_email.text.toString(), et_password.text.toString())
-                    .addOnCompleteListener {
-                        pb_loading.hideVisibility()
-                        if(it.isSuccessful) {
-                            firebaseAuth.currentUser?.let {
-                                SharedPreferenceHelper.setString(SharedPreferenceHelper.FIREBASE_USER_NAME, it.email)
-                                SharedPreferenceHelper.setString(SharedPreferenceHelper.FIREBASE_UID, it.uid)
+            if(et_email.text.isNotEmpty() && et_password.text.isNotEmpty()) {
+                pb_loading.showVisibility()
+                bt_login.disable()
+                firebaseAuth
+                        .signInWithEmailAndPassword(et_email.text.toString(), et_password.text.toString())
+                        .addOnCompleteListener {
+                            pb_loading.hideVisibility()
+                            if (it.isSuccessful) {
+                                firebaseAuth.currentUser?.let {
+                                    SharedPreferenceHelper.setString(SharedPreferenceHelper.FIREBASE_USER_NAME, it.email)
+                                    SharedPreferenceHelper.setString(SharedPreferenceHelper.FIREBASE_UID, it.uid)
+                                }
+                                startActivity(Intent(this, MainActivity::class.java))
+                                finish()
+                            } else {
+                                it.exception?.message?.let { toast(it) }
+                                it.exception?.printStackTrace()
+                                bt_login.enable()
                             }
-                            startActivity(Intent(this, MainActivity::class.java))
-                            finish()
-                        } else {
-                            it.exception?.message?.let { toast(it) }
-                            it.exception?.printStackTrace()
-                            bt_login.enable()
                         }
-                    }
+            } else {
+                toast(getString(R.string.empty_username))
+            }
         }
         tv_signup.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))

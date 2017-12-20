@@ -13,4 +13,6 @@
     <string name="unsubcribe">Unsubscribe</string>
     <string name="subscribe">Subscribe</string>
     <string name="simple_chat">Simple Chat</string>
+    <string name="empty_username">Username and password cannot empty</string>
+    <string name="empty_room">Room name cannot empty</string>
 </resources>
