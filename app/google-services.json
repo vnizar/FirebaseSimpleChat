@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "94920067350",
+    "firebase_url": "https://fir-simplechat-22d88.firebaseio.com",
+    "project_id": "fir-simplechat-22d88",
+    "storage_bucket": "fir-simplechat-22d88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94920067350:android:b7e108091c512ab0",
+        "android_client_info": {
+          "package_name": "voen.experiment.firebasesimplechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94920067350-ig3be324d80p8rfjavqpjkjk23e0vc2m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "voen.experiment.firebasesimplechat",
+            "certificate_hash": "5bcb1f0c6db73190714238e6f1d8d6791c7366b8"
+          }
+        },
+        {
+          "client_id": "94920067350-3v1d5p0q8ikrkl03ot862rpjkabtaauo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5Ub6IHC8ChdTLrd3c-fFmD3Oi2KF1054"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94920067350-3v1d5p0q8ikrkl03ot862rpjkabtaauo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94920067350:android:e3ffab60140ba8ec",
+        "android_client_info": {
+          "package_name": "voen.experiment.firebasesimplechat.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94920067350-vstl092h5k5c1dkfs8gk1ceq5la6ehgr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "voen.experiment.firebasesimplechat.debug",
+            "certificate_hash": "5bcb1f0c6db73190714238e6f1d8d6791c7366b8"
+          }
+        },
+        {
+          "client_id": "94920067350-3v1d5p0q8ikrkl03ot862rpjkabtaauo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5Ub6IHC8ChdTLrd3c-fFmD3Oi2KF1054"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94920067350-3v1d5p0q8ikrkl03ot862rpjkabtaauo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

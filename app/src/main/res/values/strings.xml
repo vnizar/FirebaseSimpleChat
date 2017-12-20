@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FirebaseSimpleChat</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup">SignUp</string>
+    <string name="main_menu_title">Main Menu</string>
+    <string name="logout">Logout</string>
+    <string name="send">Send</string>
+    <string name="new_room">New Room</string>
+    <string name="room_name">Room Name</string>
+    <string name="room_desc">Description</string>
+    <string name="unsubcribe">Unsubscribe</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="simple_chat">Simple Chat</string>
+</resources>
