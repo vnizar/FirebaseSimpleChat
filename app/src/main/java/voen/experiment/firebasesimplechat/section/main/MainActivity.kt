@@ -26,17 +26,17 @@ class MainActivity : BaseActivity() {
     }
     private val messages: MutableList<Chat> = mutableListOf()
     private val messageAdapter by lazy {
-        GeneralRecyclerViewAdapter(R.layout.chat_item, messages as MutableList<Any>, {
-            chatReference.child((it as Chat).id).removeValue()
+        GeneralRecyclerViewAdapter(R.layout.chat_item, messages, {
+            chatReference.child((it).id).removeValue()
         }, { chat, view ->
-            with(chat as Chat) {
+            with(chat) {
                 view.findViewById<TextView>(R.id.tv_message).text = this.message
                 view.findViewById<TextView>(R.id.tv_from).text = this.from
             }
         })
     }
     private val roomId by lazy {
-        intent.extras.getString(INTENT_KEY_ROOM_ID)
+        intent.extras?.getString(INTENT_KEY_ROOM_ID)
     }
     private val instanceId by lazy {
         SharedPreferenceHelper.getString(SharedPreferenceHelper.FIREBASE_TOKEN)

@@ -15,14 +15,14 @@
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".section.login.LoginActivity" />
         <activity android:name=".section.singup.SignUpActivity" />
-        <activity android:name=".section.lobby.LobbyActivity">
+        <activity android:name=".section.lobby.LobbyActivity"/>
+        <activity android:name=".section.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".section.splash.SplashActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

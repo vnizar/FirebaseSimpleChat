@@ -9,6 +9,7 @@ import org.jetbrains.anko.toast
 import voen.experiment.firebasesimplechat.R
 import voen.experiment.firebasesimplechat.helper.SharedPreferenceHelper
 import voen.experiment.firebasesimplechat.helper.getFirebaseAuth
+import voen.experiment.firebasesimplechat.section.lobby.LobbyActivity
 import voen.experiment.firebasesimplechat.section.login.LoginActivity
 import voen.experiment.firebasesimplechat.section.main.MainActivity
 import voen.experiment.firebasesimplechat.utils.*
@@ -39,7 +40,7 @@ class SignUpActivity : AppCompatActivity() {
                             pb_loading.hideVisibility()
                             if (it.isSuccessful) {
                                 saveUid()
-                                startActivity(Intent(this@SignUpActivity, MainActivity::class.java))
+                                startActivity(Intent(this@SignUpActivity, LobbyActivity::class.java))
                                 finish()
                             } else {
                                 it.exception?.message?.let { toast(it) }

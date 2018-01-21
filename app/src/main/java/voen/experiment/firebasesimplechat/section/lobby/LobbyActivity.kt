@@ -38,11 +38,11 @@ class LobbyActivity : BaseActivity() {
     }
     private val rooms: MutableList<ChatRoom> = mutableListOf()
     private val roomAdapter by lazy {
-        GeneralRecyclerViewAdapter(R.layout.room_item, rooms as MutableList<Any>, {
-            goToChatRoom((it as ChatRoom).roomName)
+        GeneralRecyclerViewAdapter(R.layout.room_item, rooms, {
+            goToChatRoom((it).roomName)
         },{
             chatRoom, view ->
-                with(chatRoom as ChatRoom) {
+                with(chatRoom) {
                     view.findViewById<TextView>(R.id.tv_room_name).text = this.roomName
                     view.findViewById<TextView>(R.id.tv_last_chat).text = this.roomDescription.cutBy(30)
                 }
